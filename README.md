@@ -1,7 +1,9 @@
-﻿# 🚀 Domoticz N8N Plugin
+﻿# 🚀 Domoticz N8N Plugin 
+
 
 **Integrate N8N workflow automations directly into Domoticz.**
 Monitor, control, and embed your N8N workflows seamlessly in your Domoticz setup. ⚡
+
 <img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/388dfc14-c496-432e-b81d-46f8a54c2b5d" />
 ---
 
