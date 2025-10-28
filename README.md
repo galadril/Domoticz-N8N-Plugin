@@ -1,144 +1,135 @@
-# Domoticz N8N Plugin
+﻿# 🚀 Domoticz N8N Plugin
 
-A Domoticz plugin for monitoring and controlling N8N workflow automations.
+**Integrate N8N workflow automations directly into Domoticz.**
+Monitor, control, and embed your N8N workflows seamlessly in your Domoticz setup. ⚡
 
-## Features
+---
 
-- **Workflow Management**: View and control all your N8N workflows from Domoticz
-- **On/Off Switches**: Each workflow gets a switch in Domoticz to activate/deactivate it
-- **Custom Dashboard**: Embedded N8N interface accessible from Domoticz
-- **Real-time Updates**: Automatically syncs workflow states
-- **Cloud & Self-hosted Support**: Works with both N8N Cloud and self-hosted instances
+## 🛠 Requirements
 
-## Requirements
+* 🏠 Domoticz (latest version recommended)
+* 🐍 Python 3.x
+* 📦 Python `requests` module (`pip3 install requests`)
+* 🌐 N8N instance (cloud or self-hosted)
+* 🔑 N8N API key
 
-- Domoticz (latest version recommended)
-- Python 3.x
-- Python `requests` module
-- N8N instance (cloud or self-hosted)
-- N8N API key
+---
 
-## Installation
+## 📥 Installation
 
-1. Clone this repository to your Domoticz plugins directory:
+1. **Clone the plugin** to your Domoticz plugins directory:
+
    ```bash
    cd domoticz/plugins
    git clone https://github.com/galadril/Domoticz-N8N-Plugin.git
    ```
 
-2. Install Python dependencies:
+2. **Install Python dependencies**:
+
    ```bash
    pip3 install requests
-```
+   ```
 
-3. Restart Domoticz
+3. **Restart Domoticz** 🔄
 
-4. Go to **Setup > Hardware** in Domoticz
+4. **Add the plugin hardware**:
 
-5. Add new hardware with type "Domoticz N8N Plugin"
+   * Go to **Setup > Hardware** ⚙️
+   * Add new hardware and select **Domoticz N8N Plugin**
 
-## Configuration
+---
 
-### Getting your N8N API Key
+## ⚙️ Configuration
 
-1. Log in to your N8N instance
-2. Go to **Settings > API**
-3. Create a new API key
-4. Copy the generated key
+### 1️⃣ Obtain Your N8N API Key
 
-### Plugin Settings
+1. Log in to your N8N instance 🌐
+2. Navigate to **Settings > API** 🔧
+3. Generate a new API key and copy it 🔑
 
-- **N8N Host**: 
-  - For self-hosted: `localhost` or your server IP/hostname
-  - For N8N Cloud: `your-instance.app.n8n.cloud`
-  
-- **Port**: 
-  - Default for self-hosted: `5678`
-  - For N8N Cloud: Leave empty or use `443`
+### 2️⃣ Plugin Settings
 
-- **Use HTTPS**: 
-  - Enable for N8N Cloud or if your self-hosted instance uses SSL
+* **N8N Host**:
 
-- **API Key**: Your N8N API key
+  * Self-hosted: `localhost` or your server IP/hostname 🖥️
+  * N8N Cloud: `your-instance.app.n8n.cloud` ☁️
 
-- **Install Custom Page**: Enable to embed N8N dashboard in Domoticz
+* **Port**:
 
-- **Update Interval**: How often to check for workflow state changes (in seconds)
+  * Default self-hosted: `5678` 🔌
+  * N8N Cloud: `443` or leave empty 🌐
 
-## Usage
+* **Use HTTPS**: Enable for N8N Cloud or SSL-enabled self-hosted instances 🔒
 
-### Workflow Switches
+* **API Key**: Paste your N8N API key here 🔑
 
-After configuration, the plugin will create a switch for each workflow in your N8N instance:
+* **Install Custom Page**: Enable to embed the N8N dashboard in Domoticz 🖼️
 
-- **Turn On**: Activates the workflow in N8N
-- **Turn Off**: Deactivates the workflow in N8N
-- The switch state automatically syncs with N8N
+* **Update Interval**: Interval (in seconds) to sync workflow states ⏱️
 
-### Custom Dashboard
+---
 
-If you enabled "Install Custom Page", access the N8N dashboard through:
-- Domoticz menu: **Custom > N8N**
-- The embedded interface provides full access to your N8N instance
+## 🎛 Usage
 
-## Supported N8N API Endpoints
+### 🔄 Workflow Switches
 
-- `GET /api/v1/workflows` - List all workflows
-- `POST /api/v1/workflows/{id}/activate` - Activate a workflow
-- `POST /api/v1/workflows/{id}/deactivate` - Deactivate a workflow
+Once configured, each workflow becomes a switch in Domoticz:
 
-## Troubleshooting
+* **Turn On** – Activates the workflow in N8N ✅
+* **Turn Off** – Deactivates the workflow ❌
+* Switch states automatically sync with N8N 🔄
 
-### Connection Issues
+### 🖥️ Custom Dashboard
 
-- Verify your N8N instance is accessible from the Domoticz server
-- Check the API key is correct and has proper permissions
-- For self-hosted instances, ensure the port is correct and not blocked by firewall
-- For HTTPS connections, ensure SSL certificates are valid
+If "Install Custom Page" is enabled:
 
-### Devices Not Appearing
+* Access via Domoticz menu: **Custom > N8N** 🖱️
+* Full N8N interface embedded in Domoticz for direct workflow management 🎛️
 
-- Check the Domoticz log for errors
-- Ensure your API key has permissions to list workflows
-- Verify workflows exist in your N8N instance
+---
 
-### Debug Mode
+## 📡 Supported N8N API Endpoints
 
-Enable debug logging in the plugin settings to see detailed API communication:
-1. Go to plugin hardware settings
-2. Set "Debug" to "Basic Debugging" or higher
-3. Check Domoticz logs for detailed information
+* `GET /api/v1/workflows` – List all workflows 📜
+* `POST /api/v1/workflows/{id}/activate` – Activate a workflow ✅
+* `POST /api/v1/workflows/{id}/deactivate` – Deactivate a workflow ❌
 
-## Development
+---
 
-### Project Structure
+## ⚠️ Troubleshooting
 
-```
-Domoticz-N8N-Plugin/
-??? plugin.py       # Main plugin file
-??? api.py             # N8N API client
-??? devices.py  # Device management
-??? constants.py    # Configuration constants
-??? n8n.html          # Custom dashboard page
-??? README.md         # This file
-```
+### 🌐 Connection Issues
 
-### Contributing
+* Ensure Domoticz can reach your N8N instance 🖥️
+* Verify API key and permissions 🔑
+* Check ports for self-hosted instances and firewalls 🔌
+* For HTTPS, verify SSL certificates 🔒
 
-Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
+### ❌ Devices Not Appearing
 
-## License
+* Review Domoticz logs for errors 📄
+* Confirm API key has permission to list workflows ✅
+* Verify that workflows exist in your N8N instance 📝
 
-This project is open source and available under the MIT License.
+### 🐞 Debug Mode
 
-## Credits
+Enable detailed logging:
 
-- Author: Mark Heinis
-- Based on the Domoticz EVCC IO Plugin architecture
-- N8N API documentation: https://docs.n8n.io/api/
+1. Go to the plugin hardware settings ⚙️
+2. Set **Debug** to *Basic Debugging* or higher 🔍
+3. Check Domoticz logs for detailed API communication 📜
 
-## Links
+---
 
-- [GitHub Repository](https://github.com/galadril/Domoticz-N8N-Plugin)
-- [N8N Official Site](https://n8n.io)
-- [Domoticz Home Automation](https://www.domoticz.com)
+## 🤝 Contributing
+
+Contributions are welcome!
+Submit pull requests or open issues for bugs, improvements, and new features 💡
+
+---
+
+## 🔗 Links
+
+* [GitHub Repository](https://github.com/galadril/Domoticz-N8N-Plugin) 🏷️
+* [N8N Official Site](https://n8n.io) 🌐
+* [Domoticz Home Automation](https://www.domoticz.com) 🏠
