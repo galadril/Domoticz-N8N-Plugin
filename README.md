@@ -4,7 +4,8 @@
 **Integrate N8N workflow automations directly into Domoticz.**
 Monitor, control, and embed your N8N workflows seamlessly in your Domoticz setup. ⚡
 
-<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/388dfc14-c496-432e-b81d-46f8a54c2b5d" />
+<img width="800" height="430" alt="image" src="https://github.com/user-attachments/assets/c57829f0-7f42-4b4e-9060-e73308895df3" />
+
 ---
 
 
